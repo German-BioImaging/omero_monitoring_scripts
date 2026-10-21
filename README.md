@@ -12,15 +12,6 @@ GRANT CONNECT ON DATABASE omero TO report_user;
 \connect omero
 GRANT USAGE ON SCHEMA public TO report_user;
 GRANT SELECT ON ALL TABLES IN SCHEMA public TO report_user;
+REVOKE SELECT ON TABLE public.password FROM report_user;
 ```
 
-To also grant access to tables created later, run this as each role that creates
-tables in the `public` schema:
-
-```sql
-ALTER DEFAULT PRIVILEGES IN SCHEMA public
-GRANT SELECT ON TABLES TO report_user;
-```
-
-These grants allow reading tables in the `public` schema without granting
-`INSERT`, `UPDATE`, or `DELETE` privileges.
