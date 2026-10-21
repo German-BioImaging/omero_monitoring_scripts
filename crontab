@@ -1,0 +1,7 @@
+/5 * * * * report_user /home/report_user/omero_report_script/new_omero_user.sh
+0 */2 * * * report_user /home/report_user/omero_report_script/failed_import.sh
+0 8 * * 1 report_user /home/report_user/omero_report_script/distinct_user_week.sh
+1 8 * * 1 report_user /home/report_user/omero_report_script/new_data_last_week.sh
+0 0 1 * * report_user /home/report_user/omero_report_script/distinct_user_month.sh
+0 2 * * 1 report_user /home/report_user/disk_usage_report/disk_usage.sh
+0 5 * * 1 report_user /home/report_user/disk_usage_report/disk_alert.sh
